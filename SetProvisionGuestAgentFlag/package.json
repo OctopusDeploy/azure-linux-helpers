@@ -1,0 +1,46 @@
+{
+  "name": "azure-provision-guest-tools",
+  "author": "Octopus Deploy",
+  "contributors": [
+    "Richardson, Matt <matt.richardson@octopus.com>"
+  ],
+  "version": "1.0.0",
+  "description": "Sets the ProvisionGuestAgent on an Azure Windows VM.",
+  "tags": [
+    "azure",
+    "vm",
+    "windows",
+    "tools"
+  ],
+  "keywords": [
+    "node",
+    "azure",
+    "vm",
+    "windows",
+    "guesttools"
+  ],
+  "main": "set-azure-provision-guest-agent-flag.js",
+  "preferGlobal": true,
+  "engines": {
+    "node": ">= 0.8.26"
+  },
+  "license": "Apache-2.0",
+  "dependencies": {
+    "promise" : "6.1.0",
+    "azure-common" : "0.9.13",
+    "azure-asm-compute" : "0.13.0",
+    "azure" : "1.2.0-preview"
+  },
+  "devDependencies": {
+  },
+  "homepage": "https://github.com/OctopusDeploy/azure-linux-helpers",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:OctopusDeploy/azure-linux-helpers.git"
+  },
+  "bin": {
+    "set-azure-provision-guest-agent-flag": "set-azure-provision-guest-agent-flag.js"
+  },
+  "scripts":{
+  }
+}
