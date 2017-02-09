@@ -116,13 +116,13 @@ var getDefaultSubscription = function(profile){
         throw "No subscription found."
     }
     console.log("[INFO]Found available subscriptions:");
-    console.log("");
-    console.log("    Id\t\t\t\t\t\tName");
-    console.log("    --------------------------------------------------------");
+    console.log("[INFO]");
+    console.log("[INFO]    Id\t\t\t\t\t\tName");
+    console.log("[INFO]    --------------------------------------------------------");
     profile.subscriptions.forEach(function(subscription){
-        console.log("    " + subscription.id + "\t" + subscription.name);
+        console.log("[INFO]    " + subscription.id + "\t" + subscription.name);
     });
-    console.log("");
+    console.log("[INFO]");
     var defaultSubscription;
     profile.subscriptions.every(function(subscription){
         if(subscription.isDefault){
@@ -137,11 +137,10 @@ var getDefaultSubscription = function(profile){
         console.log("[WARN]No subscription is selected.");
         defaultSubscription = profile.subscriptions[0];
         console.log("[INFO]The first subscription will be used.");
-        console.log("[INFO]You could use the following command to select " + 
-                    "another subscription.");
-        console.log("");
-        console.log("    azure account set [<subscript_id>|<subscript_name>]");
-        console.log("");
+        console.log("[INFO]You could use the following command to select another subscription.");
+        console.log("[INFO]");
+        console.log("[INFO]    azure account set [<subscript_id>|<subscript_name>]");
+        console.log("[INFO]");
     }
     if(defaultSubscription.user){
         return getTokenCredential(defaultSubscription);
@@ -208,10 +207,10 @@ var main = function(){
     }, function(err){
         if(err && err.statusCode == 401){
             console.error("[ERROR]Token expired. Please run the following command to login.");
-            console.log("    ");
-            console.log("    azure login");
-            console.log("or");
-            console.log("    azure account import <pem_file>");
+            console.log("[ERROR]    ");
+            console.log("[ERROR]    azure login");
+            console.log("[ERROR]or");
+            console.log("[ERROR]    azure account import <pem_file>");
             process.exit(-1);
         }else{
             console.log(err);
