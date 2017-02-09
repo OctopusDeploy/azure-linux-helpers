@@ -142,10 +142,10 @@ var getDefaultSubscription = function(profile){
         console.log("[INFO]    azure account set [<subscript_id>|<subscript_name>]");
         console.log("[INFO]");
     }
-    if(defaultSubscription.user){
-        return getTokenCredential(defaultSubscription);
-    } else if(defaultSubscription.managementCertificate){
+    if(defaultSubscription.managementCertificate){
         return getCertCredential(defaultSubscription);
+    } else if(defaultSubscription.user){
+        return getTokenCredential(defaultSubscription);
     } else {
         throw "Unknown subscription type.";
     }
